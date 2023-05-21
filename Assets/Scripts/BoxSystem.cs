@@ -56,14 +56,14 @@ namespace KID
             Collider[] hitsUp = Physics.OverlapBox(
                 transform.position +
                 transform.TransformDirection(checkPointUpOffset),
-                checkPointUpSize / 2, Quaternion.identity, layerSword);
+                checkPointUpSize / 2, transform.rotation, layerSword);
 
             if (hitsUp.Length > 0) isIn = true;
 
             Collider[] hitsDown = Physics.OverlapBox(
                 transform.position +
                 transform.TransformDirection(checkPointDownOffset),
-                checkPointDownSize / 2, Quaternion.identity, layerSword);
+                checkPointDownSize / 2, transform.rotation, layerSword);
 
             if (isIn && hitsDown.Length > 0)
             {
